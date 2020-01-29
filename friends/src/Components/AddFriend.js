@@ -62,7 +62,7 @@ class AddFriend extends React.Component {
             onChange={this.handleChange}
           />
 
-          <button type="submit">Add Friend</button>
+          <button type="submit">Add Your Friend</button>
           {this.state.isFetching && (
             <div>
               <p>Loading...</p>

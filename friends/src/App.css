@@ -37,8 +37,3 @@
     transform: rotate(360deg);
   }
 }
-
-nav {
-  display: flex;
-  justify-content: space-between;
-}

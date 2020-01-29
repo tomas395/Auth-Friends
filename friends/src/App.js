@@ -6,6 +6,26 @@ import FriendsList from "./Components/FriendsList";
 import styled from "styled-components";
 import "./App.css";
 
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <HeaderDiv>
+          <StyledLink to="/login">Login</StyledLink>
+          <StyledLink to="/protected">Friends</StyledLink>
+        </HeaderDiv>
+        <Switch>
+          <PrivateRoute exact path="/protected" component={FriendsList} />
+          <Route path="/login" component={Login} />
+          <Route component={Login} />
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+//Sparse Styling
+
 const HeaderDiv = styled.div`
   display: flex;
   align-items: center;
@@ -28,23 +48,5 @@ const StyledLink = styled(Link)`
     text-decoration: none;
   }
 `;
-
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <HeaderDiv>
-          <StyledLink to="/login">Login</StyledLink>
-          <StyledLink to="/protected">Friends List</StyledLink>
-        </HeaderDiv>
-        <Switch>
-          <PrivateRoute exact path="/protected" component={FriendsList} />
-          <Route path="/login" component={Login} />
-          <Route component={Login} />
-        </Switch>
-      </div>
-    </Router>
-  );
-}
 
 export default App;
